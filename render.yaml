@@ -2,9 +2,13 @@ services:
   - type: web
     name: ai-business-os-platform
     runtime: node
+    plan: free
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /health
+    autoDeploy: true
     envVars:
       - key: NODE_VERSION
         value: 22
+      - key: APP_ADMIN_TOKEN
+        sync: false
